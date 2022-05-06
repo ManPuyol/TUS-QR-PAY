@@ -12,10 +12,10 @@ async function confirm(req) {
     const data = await db.execute(
         `CALL confirm(${req.body.ID});`, []
     );
+    const firstKey = Object.keys(data[0][0]);
 
-    return {
-        data,
-    };
+    return data[0][0][firstKey];
+
 }
 
 

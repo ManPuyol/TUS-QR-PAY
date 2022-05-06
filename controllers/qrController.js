@@ -11,7 +11,7 @@ controller.getQR = async(req, res) => {
 
 controller.confirmPass = async(req, res) => {
     const data = await pokemon.confirm(req);
-    res.send(data);
+    res.status(200).send(data);
 };
 
 
